@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Mode</title>
+
+    <style>
+        :root {
+            --bee-yellow: #F3DB18;
+            --bee-black: #000000;
+            --bee-background: #F7F6F0;
+            --bee-green: #426e54;
+            --bee-white: #FFFFFF;
+            --bee-gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bee-background);
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--bee-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 750px;
+        }
+
+        .card {
+            background: var(--bee-white);
+            border: 3px solid var(--bee-black);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 10px 10px 0 var(--bee-black);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--bee-yellow);
+            color: var(--bee-black);
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--bee-green);
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .message {
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: var(--bee-gray);
+            font-size: 1.1rem;
+        }
+
+        .return-time {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 2px dashed var(--bee-yellow);
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .button-row {
+            margin-top: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--bee-yellow);
+            color: var(--bee-black);
+            border: 2px solid var(--bee-black);
+            padding: 0.9rem 1.5rem;
+            border-radius: 999px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: var(--bee-gray);
+            font-size: 0.9rem;
+        }
+
+        .bee {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 3rem 1.5rem;
+                box-shadow: 6px 6px 0 var(--bee-black);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+
+            <div class="bee">🐝</div>
+
+            <div class="badge">
+                Maintenance Mode
+            </div>
+
+            <h1>The Hive Is Working Its Magic</h1>
+
+            <p class="subtitle">
+                BeeDev Services
+            </p>
+
+            <p class="message">
+                We're making updates behind the scenes to improve your experience.
+                Thank you for your patience while we work. Please check back soon.
+            </p>
+
+            <div class="return-time">
+                Expected Return: Soon
+            </div>
+
+            <div class="button-row">
+                <a href="https://noveleshelf.com" class="button">
+                    Return to Website
+                </a>
+            </div>
+
+            <div class="footer">
+                Maintenance managed by BeeDev Services
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
