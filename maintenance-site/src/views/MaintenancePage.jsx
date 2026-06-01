@@ -122,9 +122,16 @@ export default function MaintenancePage({ mode, slugOverride }) {
                     </p>
                 )}
 
-                {theme.footerText && (
-                    <p className="maintenance-footer">{theme.footerText}</p>
-                )}
+                <div className="maintenance-footer">
+                    Maintenance managed by{" "}
+                    <a
+                        href="https://beedev-services.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        BeeDev Services Hive
+                    </a>
+                </div>
             </section>
         </main>
     );
