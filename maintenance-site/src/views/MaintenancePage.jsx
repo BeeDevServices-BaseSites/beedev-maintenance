@@ -7,6 +7,11 @@ import {
     applyTheme,
     applyFavicon
 } from "../utils/maintenanceHelpers";
+import {
+    getMaintenanceTokens,
+    fillMaintenanceTemplate,
+    getEstimatedReturnDisplay
+} from "../utils/maintenanceTime";
 
 export default function MaintenancePage({ mode, slugOverride }) {
     const { slug } = useParams();
@@ -50,7 +55,7 @@ export default function MaintenancePage({ mode, slugOverride }) {
                 setTheme(selectedTheme);
             } catch (err) {
                 console.error(err);
-                setError("We’re having trouble loading this maintenance page.");
+                setError("We're having trouble loading this maintenance page.");
             }
         }
 
@@ -61,7 +66,7 @@ export default function MaintenancePage({ mode, slugOverride }) {
         return (
             <main className="maintenance-page">
                 <section className="maintenance-card">
-                    <h1>We’ll be right back.</h1>
+                    <h1>We'll be right back.</h1>
                     <p>{error}</p>
                 </section>
             </main>
@@ -77,6 +82,10 @@ export default function MaintenancePage({ mode, slugOverride }) {
             </main>
         );
     }
+
+    const tokens = getMaintenanceTokens(page);
+    const displayMessage = fillMaintenanceTemplate(page.message, tokens);
+    const estimatedReturnDisplay = getEstimatedReturnDisplay(page);
 
     return (
         <main className={`maintenance-page maintenance-${page.type}`}>
@@ -100,12 +109,12 @@ export default function MaintenancePage({ mode, slugOverride }) {
 
                 <p className="maintenance-site-name">{page.siteName}</p>
 
-                <p className="maintenance-message">{page.message}</p>
+                <p className="maintenance-message">{displayMessage}</p>
 
-                {page.showEstimatedReturn && page.estimatedReturn && (
+                {estimatedReturnDisplay && (
                     <div className="maintenance-return">
                         <strong>Estimated return:</strong>
-                        <span>{page.estimatedReturn}</span>
+                        <span>{estimatedReturnDisplay}</span>
                     </div>
                 )}
 
@@ -124,7 +133,7 @@ export default function MaintenancePage({ mode, slugOverride }) {
 
                 <div className="maintenance-footer">
                     Maintenance managed by{" "}
-                    <a
+                    
                         href="https://beedev-services.com"
                         target="_blank"
                         rel="noopener noreferrer"
