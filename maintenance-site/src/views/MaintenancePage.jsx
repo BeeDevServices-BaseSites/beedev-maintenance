@@ -11,7 +11,7 @@ import {
     getMaintenanceTokens,
     fillMaintenanceTemplate,
     getEstimatedReturnDisplay
-} from "../utils/maintenanceTime";
+} from "../utils/maintenancTime";
 
 export default function MaintenancePage({ mode, slugOverride }) {
     const { slug } = useParams();
@@ -133,8 +133,8 @@ export default function MaintenancePage({ mode, slugOverride }) {
 
                 <div className="maintenance-footer">
                     Maintenance managed by{" "}
-                    
-                        href="https://beedev-services.com"
+
+                    <a href="https://beedev-services.com"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
